@@ -1,0 +1,11 @@
+set MEDIA := tv mag;
+param budjet := 1000000;
+param cout :=
+	tv 20000
+	mag 10000;
+param impact :=
+	tv 1800000
+	mag 1000000;
+param min :=
+	tv 10
+	mag 0;

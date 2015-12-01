@@ -1,0 +1,24 @@
+set QUALITES := inferieur, moyenne, superieur;
+
+set USINES := A, B;
+
+param N := 3;
+param cout_par_jour :=
+	A 1000
+	B 2000;
+
+param tonne_par_jour (tr)
+: 	inferieur moyenne superieur :=
+A          8         1       2
+B          2         1       7;
+
+param demande
+:          1   2   3 :=
+inferieur 16  18  22 
+moyenne   10   8   9
+superieur 20  14  23;
+
+param stock_init :=
+	inferieur 4
+	moyenne 7
+	superieur 0;

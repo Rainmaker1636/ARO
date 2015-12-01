@@ -1,0 +1,9 @@
+set QUALITES := inferieur, moyenne, superieur;
+
+set USINES := A, B;
+
+param cout_par_jour{QUALITES} :=
+	A 1000
+	B 2000
+
+	param 

@@ -1,0 +1,11 @@
+set QUALITES;
+set USINES;
+
+param demande{QUALITES} >= 0;
+param cout_par_jour{USINES} >= 0;
+param tonne_par_jour{QUALITES, USINES} >= 0;
+
+var nbJour >= 0;
+
+minimize temps :=
+	

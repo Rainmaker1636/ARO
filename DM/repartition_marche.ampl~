@@ -1,0 +1,31 @@
+set DETAILLANTS;
+set REGIONS;
+set CATEGORIES;
+
+param region{DETAILLANTS} symbolic in REGIONS;
+param huile{DETAILLANTS} >= 0;
+param nb_pts_vente{DETAILLANTS} >= 0;
+param spiritueux{DETAILLANTS} >= 0;
+param categorie{DETAILLANTS} symbolic in CATEGORIES;
+
+var appartient_a_d1 {DETAILLANTS} binary;
+
+# Spiritueux pour d1
+subject to spiritueux_d1 :
+	35 <= (sum{d in DETAILLANTS} spiritueux[d] * appartient_a_d1[d]) / (sum{d in DETAILLANTS}spiritueux[d]) * 100 <= 45;
+
+# Spiritueux pour d2
+subject to spiritueux_d2 :
+	55 <= (sum{d in DETAILLANTS} spiritueux[d] * (1 - appartient_a_d1[d])) / (sum{d in DETAILLANTS}spiritueux[d]) * 100 <= 65;
+
+# Nb point de vente pour d1
+subject to nb_point_vente_d1 :
+	35 <= (sum{d in DETAILLANTS} nb_pts_vente[d] * appartient_a_d1[d]) / (sum{d in DETAILLANTS}nb_pts_vente[d]) * 100 <= 45;
+
+# Nb point de vente pour d2
+subject to nb_point_vente_d2 :
+	55 <= (sum{d in DETAILLANTS} nb_pts_vente[d] * (1 - appartient_a_d1[d])) / (sum{d in DETAILLANTS}nb_pts_vente[d]) * 100 <= 65;
+
+#A revoir
+subject to region_d1{r in REGIONS} :
+	35 <= (sum{d in DETAILLANTS} huile[d] * appartient_a_d1[d]) / (sum{d in DETAILLANTS}huile[d]) * 100 <= 45;

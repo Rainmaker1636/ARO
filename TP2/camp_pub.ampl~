@@ -1,0 +1,10 @@
+set MEDIA;
+
+param budget >= 0; #en euros
+param cout{MEDIA} >= 0 #en euros;
+param impact{MEDIA} >= 0 #en personnes;
+param min{MEDIA} >= 0 #en minutes;
+var qte{MEDIA} >= 0;
+
+maximize nb_pers:
+	sum {m in MEDIA}

@@ -1,0 +1,19 @@
+set MEDIA := tv mag radio;
+param budget := 1000000;
+param travailleurs := 100;
+param travailleurs_semaines :=
+	tv 1
+	mag 3
+	radio 7;
+param cout :=
+	tv 20000
+	mag 10000
+	radio 2000;
+param impact :=
+	tv 1800000
+	mag 1000000
+	radio 250000;
+param mini :=
+	tv 10
+	mag 2
+	radio 2;

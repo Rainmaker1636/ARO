@@ -1,0 +1,8 @@
+graph{
+S0 -- S1[color=blue]
+S0 -- S4[color=blue]
+S1 -- S2[color=blue]
+S1 -- S3[color=blue]
+S1 -- S4[color=blue]
+S3 -- S4[color=blue]
+}

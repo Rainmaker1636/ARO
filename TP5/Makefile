@@ -1,0 +1,2 @@
+parcours_largeur: parcours_largeur.c graphe.c
+	gcc -Wall -g -std=c99 parcours_largeur.c graphe.c -o parcours_largeur

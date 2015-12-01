@@ -1,0 +1,5 @@
+reset;
+model repartition_marche.ampl
+data;
+repartition_marche.data
+solve;	
